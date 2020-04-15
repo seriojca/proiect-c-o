@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body onload="setTimeout(calculTabel(),200)">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-center">
+        <a class="navbar-brand" href="index.html">Cercetari operationale</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Exercitii
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="polinom.html">Determinarea polinomului de interpolare</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <div class = "card text-center" >
+
+        <div class="card-body">
+      <table class="table table-hover table-dark" style="border-radius: 10px; width: 50%; margin: 0px auto; float: none; margin-top: 10vh;">
+        <thead>
+          <tr>
+            <th scope="col">Index</th>
+            <th>Xi</th>
+            <th>Yi</th>
+          </tr>
+        </thead>
+        <tbody id="dateStatisticeTabel">
+          </tbody>
+        </tbody>
+      </table>
+      <div class="form-inline mt-3 justify-content-center">
+      <div class="input-group mb-3 w-20">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Seria</span>
+        </div>
+        <input id ="xinumar" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+      <div class="input-group mb-3 ml-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Datele</span>
+        </div>
+        <input id ="yinumar" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      </div>
+      <div class="form-inline mt-3 justify-content-center">
+        <button type="button" class="btn btn-dark text-center" style=" margin-top: 5vh;" onclick="addline(),calculTabel()">Adauga</button>
+        <!-- <button type="button" class="btn btn-dark text-center ml-3" style=" margin-top: 5vh;" onclick="calculTabel()">Calculeaza</button> -->
+      </div>
+      
+      </div>
+    </div>
+
+    <table class="table table-hover table-dark " style="border-radius: 10px; width: 50%; margin: 0px auto; float: none; margin-top: 10vh; margin-bottom: 10vh;">
+      <thead>
+        <tr>
+
+          <th>Σ xi</th>
+          <th>Σ yi</th>
+          <th>Σ xi^2</th>
+          <th>Σ Xi*Yi</th>
+          <th>det</th>
+          <th>det0</th>
+          <th>det1</th>
+          <th>a0</th>
+          <th>a1</th>
+
+        </tr>
+
+        <th  id="xi"></th>
+        <th id="yi"></th>
+        <th id="xi2"></th>
+        <th id="xiyi"></th>
+        <th id="det"></th>
+        <th id="det0"></th>
+        <th id="det1"></th>
+        <th id="a0"></th>
+        <th id="a1"></th>
+
+        <tr>
+
+        </tr>
+      </thead>
+      <tbody id="dateStatisticeTabel">
+        </tbody>
+      </tbody>
+    </table>
+    
+    <div class = "card text-center" >
+
+      <div class="card-body" style = "margin-bottom: 20px; margin-top: 20px;">
+        <h1>Polinomul de interpolare : L(x) = <span id ="inserta0"> </span> + (<span id="inserta1" ></span>)*X </h1>
+      </div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
